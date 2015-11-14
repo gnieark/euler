@@ -9,7 +9,7 @@ function largestPrimeFactorOf($number){
     $primesNumbers=array(2);//non considering value 1
     $i=3; //begin to 3
 
-    while($i<sqrt($number)){
+    while($i<=sqrt($number)){
         //echo $i;
         //is $i a factorOf $number
         if(fmod($number,$i)==0){
