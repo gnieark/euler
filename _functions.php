@@ -23,15 +23,14 @@ function getPrimeNumber($order){
 
     while (count($primeNumbersList) < $order){
         $isPrimaryNumber=true;
-        foreach($primeNumbersList as $pr){
-            
-            if($pr>sqrt($i)){
-                break;
-            }
-            if(fmod($i,$pr)==0){
+        $index=0;
+        
+        while(($primeNumbersList[$index]<=sqrt($i)) && $index < count($primeNumbersList)){
+            if(fmod($i,$primeNumbersList[$index])==0){
                 $isPrimaryNumber=false;
                 break;
             }
+            $index++;
         }
         if($isPrimaryNumber){
             $primeNumbersList[]=$i;
