@@ -40,8 +40,15 @@ function getPrimeNumber($order){
     return $i-2;
 }
 
-function getAllDivisors($n){
-  $divisors=array(1);
+function getAllDivisors($n,$takeOne=true,$takeHimself=true){
+  $divisors=array();
+  if($takeOne){
+    $divisors[]=1;
+  }
+  if($takeHimself){
+    $divisors[]=$n;
+  }
+  
   for($i=2;$i<=sqrt($n);$i++){
     if(fmod($n,$i)==0){
       $divisors[]=$i;
