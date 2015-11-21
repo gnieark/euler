@@ -39,12 +39,15 @@ function getPrimeNumber($order){
     }
     return $i-2;
 }
+
 function getAllDivisors($n){
   $divisors=array(1);
   for($i=2;$i<=sqrt($n);$i++){
     if(fmod($n,$i)==0){
       $divisors[]=$i;
-      $divisors[]=$n/$i;
+      if($i <> $n/$i){
+	$divisors[]=$n/$i;
+      }
     }
   }
   return $divisors;
