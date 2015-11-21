@@ -13,7 +13,6 @@ $sum=0;
 //If d(a) = b and d(b) = a, where a ≠ b,
 
 foreach($sumOfDivisors as $a => $d){
-
   if((isset($sumOfDivisors[$d])) && ($sumOfDivisors[$d]==$a) && ($a<>$d)){
     $sum+=$a;
   }
