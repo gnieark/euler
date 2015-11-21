@@ -57,5 +57,13 @@ function getAllDivisors($n,$takeOne=true,$takeHimself=true){
       }
     }
   }
+  sort($divisors);
   return $divisors;
+}
+
+function isAbundant($n){
+  if(array_sum(getAllDivisors($n,true,false))>$n)
+    return true;
+  else
+    return false;
 }
