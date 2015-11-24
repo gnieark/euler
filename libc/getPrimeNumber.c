@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
         
         int limit= atoi(argv[1]);
         int *primes, i, isPrime,count=2, number=3;
-        primes=(int*)malloc(2*sizeof(int));
+        primes=(int*)malloc(limit*sizeof(int));
         primes[0]=2;
         primes[1]=3;
 
@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
             }
             if(isPrime){
                 count++;
-               primes=realloc(primes,count*sizeof(int));
                 primes[count -1]=number;
             }
             number+=2;
