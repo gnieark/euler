@@ -11,14 +11,15 @@ int main(int argc, char *argv[])
     else{
         
         int limit= atoi(argv[1]);
-        int *primes, i, isPrime,count=2, number=3;
+        int *primes, i, isPrime,count=2, number=3,root;
         primes=(int*)malloc(limit*sizeof(int));
         primes[0]=2;
         primes[1]=3;
-
+        
         while( count <= limit){
             isPrime=1;
-            for (i=0; ((primes[i] <= sqrt(number)) && (i < count)) ; i=i+1){
+            root=sqrt(number);
+            for (i=0; ((primes[i] <= root) && (i < count)) ; i++){
              if(number%primes[i] == 0){
                  isPrime=0;
                  break;
